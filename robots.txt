@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://lukanoski.github.io/Portfolio/sitemap.xml
