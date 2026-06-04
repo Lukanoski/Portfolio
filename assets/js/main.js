@@ -16,7 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.gallery-image').forEach(img => {
     img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
+      // If it's a thumbnail, load the full version
+      let src = img.src;
+      if (src.includes('-thumbnail.')) {
+        src = src.replace('-thumbnail.', '.');
+      }
+      lightboxImg.src = src;
       lightboxCaption.textContent = img.dataset.caption || '';
       lightbox.classList.add('active');
     });
